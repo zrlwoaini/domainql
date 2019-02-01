@@ -230,10 +230,10 @@ public class AnotherDomainQLTest
             assertThat(sourceOne.getFieldDefinitions().get(0).getType(),is(nonNull(Scalars.GraphQLString)));
             assertThat(sourceOne.getFieldDefinitions().get(1).getName(),is("id"));
             assertThat(sourceOne.getFieldDefinitions().get(1).getType(),is(nonNull(Scalars.GraphQLString)));
-            assertThat(sourceOne.getFieldDefinitions().get(2).getName(),is("targetId"));
-            assertThat(sourceOne.getFieldDefinitions().get(2).getType(),is(nonNull(Scalars.GraphQLString)));
-            assertThat(sourceOne.getFieldDefinitions().get(3).getName(),is("target"));
-            assertThat(sourceOne.getFieldDefinitions().get(3).getType(),is(nonNull(schema.getType("TargetOne"))));
+            assertThat(sourceOne.getFieldDefinitions().get(3).getName(),is("targetId"));
+            assertThat(sourceOne.getFieldDefinitions().get(3).getType(),is(nonNull(Scalars.GraphQLString)));
+            assertThat(sourceOne.getFieldDefinitions().get(2).getName(),is("target"));
+            assertThat(sourceOne.getFieldDefinitions().get(2).getType(),is(nonNull(schema.getType("TargetOne"))));
 
         }
     }
@@ -477,8 +477,8 @@ public class AnotherDomainQLTest
 
         assertThat(pagedPayload, is(notNullValue()));
         assertThat(pagedPayload.getFieldDefinitions().size(), is(2));
-        final GraphQLList listProp = (GraphQLList) ((GraphQLNonNull)pagedPayload.getFieldDefinitions().get(0).getType()).getWrappedType();
-        final GraphQLOutputType numProp = (GraphQLOutputType) ((GraphQLNonNull)pagedPayload.getFieldDefinitions().get(1).getType()).getWrappedType();
+        final GraphQLList listProp = (GraphQLList) ((GraphQLNonNull)pagedPayload.getFieldDefinitions().get(1).getType()).getWrappedType();
+        final GraphQLOutputType numProp = (GraphQLOutputType) ((GraphQLNonNull)pagedPayload.getFieldDefinitions().get(0).getType()).getWrappedType();
         assertThat(listProp.getWrappedType().getName(), is( "Payload"));
         assertThat(numProp.getName(), is( "Int"));
 
@@ -504,8 +504,8 @@ public class AnotherDomainQLTest
 
         assertThat(pagedPayload, is(notNullValue()));
         assertThat(pagedPayload.getFieldDefinitions().size(), is(2));
-        final GraphQLList listProp = (GraphQLList) ((GraphQLNonNull)pagedPayload.getFieldDefinitions().get(0).getType()).getWrappedType();
-        final GraphQLOutputType numProp = (GraphQLOutputType) ((GraphQLNonNull)pagedPayload.getFieldDefinitions().get(1).getType()).getWrappedType();
+        final GraphQLList listProp = (GraphQLList) ((GraphQLNonNull)pagedPayload.getFieldDefinitions().get(1).getType()).getWrappedType();
+        final GraphQLOutputType numProp = (GraphQLOutputType) ((GraphQLNonNull)pagedPayload.getFieldDefinitions().get(0).getType()).getWrappedType();
         assertThat(listProp.getWrappedType().getName(), is( "AnnotatedPayload"));
         assertThat(numProp.getName(), is( "Int"));
 
@@ -537,8 +537,8 @@ public class AnotherDomainQLTest
 
         assertThat(pagedPayload, is(notNullValue()));
         assertThat(pagedPayload.getFieldDefinitions().size(), is(2));
-        final GraphQLList listProp = (GraphQLList) ((GraphQLNonNull)pagedPayload.getFieldDefinitions().get(0).getType()).getWrappedType();
-        final GraphQLOutputType numProp = (GraphQLOutputType) ((GraphQLNonNull)pagedPayload.getFieldDefinitions().get(1).getType()).getWrappedType();
+        final GraphQLList listProp = (GraphQLList) ((GraphQLNonNull)pagedPayload.getFieldDefinitions().get(1).getType()).getWrappedType();
+        final GraphQLOutputType numProp = (GraphQLOutputType) ((GraphQLNonNull)pagedPayload.getFieldDefinitions().get(0).getType()).getWrappedType();
         assertThat(listProp.getWrappedType().getName(), is( "SourceOne"));
         assertThat(numProp.getName(), is( "Int"));
 
@@ -764,8 +764,8 @@ public class AnotherDomainQLTest
         final GraphQLObjectType type = (GraphQLObjectType) schema.getType(queryContainerB.getType().getName());
         assertThat(type.getDescription(), is("Generated for Container<TypeB>"));
         assertThat(type.getFieldDefinitions().size(), is(2));
-        assertThat(type.getFieldDefinitions().get(0).getName(), is("value"));
-        assertThat(type.getFieldDefinitions().get(0).getType().getName(), is("TypeB"));
+        assertThat(type.getFieldDefinitions().get(1).getName(), is("value"));
+        assertThat(type.getFieldDefinitions().get(1).getType().getName(), is("TypeB"));
 
 
         GraphQLFieldDefinition queryListA = queryType.getFieldDefinition("queryListTypeA");
@@ -812,8 +812,8 @@ public class AnotherDomainQLTest
         final GraphQLObjectType type = (GraphQLObjectType) schema.getType(mutationContainerB.getType().getName());
         assertThat(type.getDescription(), is("Generated for Container<TypeB>"));
         assertThat(type.getFieldDefinitions().size(), is(2));
-        assertThat(type.getFieldDefinitions().get(0).getName(), is("value"));
-        assertThat(type.getFieldDefinitions().get(0).getType().getName(), is("TypeB"));
+        assertThat(type.getFieldDefinitions().get(1).getName(), is("value"));
+        assertThat(type.getFieldDefinitions().get(1).getType().getName(), is("TypeB"));
 
 
         GraphQLFieldDefinition mutationListA = mutationType.getFieldDefinition("mutateListTypeA");
